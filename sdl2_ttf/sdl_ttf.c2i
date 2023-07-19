@@ -1,0 +1,16 @@
+module sdl_ttf;
+
+import c2 local;
+import sdl;
+
+type Font struct { } @(cname="TTF_Font")
+
+func void Font.close(Font* font) @(cname="TTF_CloseFont");
+
+func c_int init() @(cname="TTF_Init");
+
+func Font* openFont(const char* file, c_int ptsize) @(cname="TTF_OpenFont");
+
+func void quit() @(cname="TTF_Quit");
+
+func sdl.Surface* renderTextSolid(Font* font, const char* text, sdl.Color fg) @(cname="TTF_RenderText_Solid");
